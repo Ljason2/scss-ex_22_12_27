@@ -1,0 +1,30 @@
+@mixin left-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @content;
+}
+
+$size:100px;
+$color:orange;
+// 삽입하는 위치 만들기
+
+
+
+.container{
+    width: $size;
+    height: $size;
+    @include left-top;
+    background-color: orange;
+}
+
+
+.box{
+    width: $size *2;
+    height:$size *3;
+    background-color: green;
+    @include left-top{
+        left:$size *3;
+        padding: 30px;
+    }
+}
